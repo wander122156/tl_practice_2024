@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\source\\repos\\OrderManager\\OrderManager\\OrderManager.csproj": {}
+    "C:\\Users\\Admin\\source\\tl_practice_2024\\OrderManager\\OrderManager\\OrderManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\source\\repos\\OrderManager\\OrderManager\\OrderManager.csproj": {
+    "C:\\Users\\Admin\\source\\tl_practice_2024\\OrderManager\\OrderManager\\OrderManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\OrderManager\\OrderManager\\OrderManager.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\source\\tl_practice_2024\\OrderManager\\OrderManager\\OrderManager.csproj",
         "projectName": "OrderManager",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\OrderManager\\OrderManager\\OrderManager.csproj",
+        "projectPath": "C:\\Users\\Admin\\source\\tl_practice_2024\\OrderManager\\OrderManager\\OrderManager.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\OrderManager\\OrderManager\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\source\\tl_practice_2024\\OrderManager\\OrderManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

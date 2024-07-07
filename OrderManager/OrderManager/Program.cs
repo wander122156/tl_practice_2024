@@ -1,81 +1,65 @@
-﻿AddNewProduct();
-
-string product = ReadProductName();
-int count = ReadProductQuantity();
-string name = ReadUserName();
-string address = ReadAddress();
-ConfirmNewProduct( product, count, name, address );
-
-static void AddNewProduct()
+﻿internal class Program
 {
-    Console.WriteLine( "Добавление нового товара " );
-}
-static string ReadProductName()
-{
-    Console.Write( "Название товара: " );
-    string productName = Console.ReadLine();
-    while ( string.IsNullOrWhiteSpace( productName ) )
+    public static void Main( string[] args )
     {
-        productName = Console.ReadLine();
+        AddNewProduct();
+
+        string product = ReadInput( "Название товара: " );
+        int count = ReadProductQuantity();
+        string name = ReadInput( "Имя пользователя: " );
+        string address = ReadInput( "Адрес доставки: " );
+
+        ConfirmNewProduct( product, count, name, address );
     }
 
-    return productName;
-}
-static int ReadProductQuantity()
-{
-    Console.Write( "Количество товара: " );
-    int productQuantity;
-    while ( !int.TryParse( Console.ReadLine(), out productQuantity ) )
+    //... остальные функции
+    static void AddNewProduct()
     {
-        Console.WriteLine( "Quantity invalid" );
+        Console.WriteLine( "Добавление нового товара " );
     }
-
-    return productQuantity;
-}
-
-static string ReadUserName()
-{
-    Console.Write( "Имя пользователя: " );
-    string userName = Console.ReadLine();
-    while ( string.IsNullOrWhiteSpace( userName ) )
+    static string ReadInput( string param )
     {
-        userName = Console.ReadLine();
-    }
-
-    return userName;
-}
-
-static string ReadAddress()
-{
-    Console.Write( "Адрес доставки: " );
-    string address = Console.ReadLine();
-    while ( string.IsNullOrWhiteSpace( address ) )
-    {
-        address = Console.ReadLine();
-    }
-
-    return address;
-}
-static void ConfirmNewProduct( string product, int count, string name, string address )
-{
-    Console.WriteLine( $"Здравствуйте, {name}, вы заказали {count} {product} на адрес {address}, все верно? (yes/no)" );
-
-    while ( true )
-    {
-        string confirmation = Console.ReadLine();
-        if ( confirmation == "yes" )
+        Console.Write( param );
+        string inputName = Console.ReadLine();
+        while ( string.IsNullOrWhiteSpace( inputName ) )
         {
-            Console.WriteLine( $"{name}! Ваш заказ {product} в количестве {count} оформлен! Ожидайте доставку по адресу {address} к завтрашнему дню" );
-            break;
+            inputName = Console.ReadLine();
         }
-        else if ( confirmation == "no" )
+
+        return inputName;
+    }
+    static int ReadProductQuantity()
+    {
+        Console.Write( "Количество товара: " );
+        int productQuantity;
+        while ( !int.TryParse( Console.ReadLine(), out productQuantity ) )
         {
-            Console.WriteLine( "Ваш заказ отменен" );
-            break;
+            Console.WriteLine( "неверный ввод" );
         }
-        else
+
+        return productQuantity;
+    }
+    static void ConfirmNewProduct( string product, int count, string name, string address )
+    {
+        Console.WriteLine( $"Здравствуйте, {name}, вы заказали {count} {product} на адрес {address}, все верно? (да/нет)" );
+
+        while ( true )
         {
-            Console.WriteLine( "invalid answer" );
+            string confirmation = Console.ReadLine();
+            if ( confirmation == "да" )
+            {
+                Console.WriteLine( $"{name}! Ваш заказ {product} в количестве {count} оформлен! Ожидайте доставку по адресу {address} к завтрашнему дню" );
+                break;
+            }
+            else if ( confirmation == "нет" )
+            {
+                Console.WriteLine( "Ваш заказ отменен" );
+                break;
+            }
+            else
+            {
+                Console.WriteLine( "неверный ответ" );
+            }
         }
     }
 }

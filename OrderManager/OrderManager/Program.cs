@@ -1,4 +1,4 @@
-﻿internal class Program
+﻿static class Program
 {
     public static void Main( string[] args )
     {
@@ -12,12 +12,12 @@
         ConfirmNewProduct( product, count, name, address );
     }
 
-    //... остальные функции
     static void AddNewProduct()
     {
         Console.WriteLine( "Добавление нового товара " );
     }
-    static string ReadInput( string param )
+
+    private static string ReadInput( string param )
     {
         Console.Write( param );
         string inputName = Console.ReadLine();
@@ -45,7 +45,7 @@
 
         while ( true )
         {
-            string confirmation = Console.ReadLine();
+            string confirmation = Console.ReadLine().ToLower();
             if ( confirmation == "да" )
             {
                 Console.WriteLine( $"{name}! Ваш заказ {product} в количестве {count} оформлен! Ожидайте доставку по адресу {address} к завтрашнему дню" );

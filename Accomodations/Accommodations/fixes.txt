@@ -1,0 +1,11 @@
+﻿не сделал задание с фильтрацией
+1.1-1.2 AccomoadationsProcessor.cs {59 - 87 строки} 
+1.3 AccomoadationsProcessor.cs {109 - 121 строки}
+#### Перейдем непосредственно к бизнес-логике
+
+2.1 BookingService.cs {с 26 строки + доп баг + нельзя создать бронь раньше чем с текущей даты
+(до фикса можно было создать бронь к примеру на прошлый год и только при отмене выдавало ошибку)}
+2.2 BookingService.cs ф-я CalculateCancellationPenaltyAmount {штраф при отмене брони теперь не отрицательный и правильно считается}
+2.3 FindBookingByIdCommand.cs {11 строка booking.RoomCategory.Name}
+
+2.5. BookingService.cs {145 - 154 строки}
